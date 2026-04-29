@@ -4,13 +4,24 @@ import { getNewsDeatiles } from "../../../lib/news";
 import Link from "next/link";
 import { BsArrowLeft } from "react-icons/bs";
 
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+
+  const newsData = await getNewsDeatiles(id);
+
+  const news = newsData?.[0];
+
+  return {
+    title: news.title,
+  };
+}
+
 const NewsDetailes = async ({ params }) => {
   const { id } = await params;
   const news = await getNewsDeatiles(id);
 
   const { title, image_url, details, category_id } = news[0];
 
-  
   return (
     <div>
       <h2 className="text-xl font-semibold mb-4">Dragon News</h2>

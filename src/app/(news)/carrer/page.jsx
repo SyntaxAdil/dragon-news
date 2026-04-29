@@ -1,5 +1,7 @@
 
-
+export const metadata = {
+  title: "Career | Dragon News",
+};
 const jobs = [
   {
     title: "Senior News Reporter",

@@ -2,7 +2,9 @@ import React from "react";
 import SocialRight from "./../../components/news/SocialRight";
 import Header from "../../components/shared/Header";
 
+
 export default function NewsLayout({ children }) {
+  
   return (
     <div className="min-h-full flex flex-col">
       <Header></Header>

@@ -10,9 +10,12 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Dragon News",
+  title: "Dragon News | Your Trusted Global Source",
+  description: "Stay updated with the latest headlines, breaking news, and in-depth stories from around the world. Dragon News brings you reliable information at your fingertips.",
+  icons: {
+    icon: "/favicon.png", 
+  },
 };
-
 export default function RootLayout({ children }) {
   return (
     <html

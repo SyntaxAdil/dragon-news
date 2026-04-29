@@ -1,5 +1,6 @@
-
-
+export const metadata = {
+  title: "About | Dragon News",
+};
 const teamMembers = [
   {
     name: "James Harrington",
@@ -29,17 +30,21 @@ const teamMembers = [
 
 const milestones = [
   { year: "2004", text: "Founded in Dhaka as a print weekly." },
-  { year: "2009", text: "Launched online portal, first in Bangladesh to go digital-first." },
+  {
+    year: "2009",
+    text: "Launched online portal, first in Bangladesh to go digital-first.",
+  },
   { year: "2015", text: "Won South Asia Press Freedom Award." },
-  { year: "2019", text: "Expanded to international correspondent network across 14 countries." },
+  {
+    year: "2019",
+    text: "Expanded to international correspondent network across 14 countries.",
+  },
   { year: "2024", text: "Reached 10 million monthly readers worldwide." },
 ];
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white font-sans">
-
-
       {/* Page Content */}
       <main className="container mx-auto max-w-6xl px-4 py-10">
         {/* Hero */}
@@ -77,9 +82,8 @@ export default function AboutPage() {
             </h2>
             <p className="text-gray-600 text-sm leading-relaxed">
               We exist to hold power accountable, give voice to the voiceless,
-              and deliver accurate, impartial news to every corner of
-              Bangladesh and beyond. Our editorial independence is
-              non-negotiable.
+              and deliver accurate, impartial news to every corner of Bangladesh
+              and beyond. Our editorial independence is non-negotiable.
             </p>
           </div>
           <div className="bg-gray-50 border border-gray-200 rounded-xl p-7">
@@ -136,7 +140,9 @@ export default function AboutPage() {
                 <span className="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-red-500 border-2 border-white flex items-center justify-center">
                   <span className="w-2 h-2 rounded-full bg-white" />
                 </span>
-                <p className="text-xs font-bold text-red-500 mb-0.5">{m.year}</p>
+                <p className="text-xs font-bold text-red-500 mb-0.5">
+                  {m.year}
+                </p>
                 <p className="text-sm text-gray-700">{m.text}</p>
               </div>
             ))}
@@ -199,7 +205,9 @@ export default function AboutPage() {
             ].map((v) => (
               <div key={v.title}>
                 <p className="font-semibold text-sm mb-1">{v.title}</p>
-                <p className="text-xs text-gray-500 leading-relaxed">{v.desc}</p>
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  {v.desc}
+                </p>
               </div>
             ))}
           </div>

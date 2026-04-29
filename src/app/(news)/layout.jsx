@@ -2,7 +2,11 @@ import React from "react";
 import Header from "../../components/shared/Header";
 import MarqueeText from "../../components/shared/Marquee";
 
-import Navbar from './../../components/shared/Navbar';
+import Navbar from "./../../components/shared/Navbar";
+
+export const metadata = {
+  title: "News | Dragon News",
+};
 
 export default function NewsLayout({ children }) {
   return (
