@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import React from "react";
 
@@ -6,11 +5,9 @@ import SocialMediaLogin from "./SocialMediaLogin";
 
 const SocialRight = () => {
   return (
-    <div>
-   
-      
+    <div className="bg-base-200">
       {/* Social media login */}
-      <SocialMediaLogin/>
+      <SocialMediaLogin />
       <div className="my-8">
         <h2 className="text-xl font-medium mb-3">Find Us On</h2>
         <div className="space-y-2">
@@ -38,7 +35,7 @@ const SocialRight = () => {
 
       <div className="bg-[#f3f3f3] p-4 my-8">
         <h2 className="text-xl font-medium mb-8">Q-Zone </h2>
-        <div className="space-y-4">
+        <div className="space-y-4 flex flex-col  justify-center">
           <Image
             width={300}
             height={300}

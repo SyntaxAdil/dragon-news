@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { authClient } from "../../../lib/auth/auth-client";
-import { BiInfoCircle } from "react-icons/bi";
+import { BiInfoCircle, BiShow, BiHide } from "react-icons/bi";
 
 const FieldError = ({ error }) =>
   error ? <p className="text-red-500 text-xs mt-3">{error.message}</p> : null;
@@ -13,7 +13,14 @@ const FieldError = ({ error }) =>
 const Login = () => {
   const router = useRouter();
   const [authError, setAuthError] = useState(null);
-  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm();
+  const [showPassword, setShowPassword] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm();
 
   const onSubmit = async (data) => {
     setAuthError(null);
@@ -47,13 +54,35 @@ const Login = () => {
 
           <div>
             <label className="text-sm font-medium block mb-1">Email address</label>
-            <input type="email" placeholder="Enter your email address" className="input input-bordered bg-base-200 w-full" {...register("email", { required: "Email is required" })} />
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              className="input input-bordered bg-base-200 w-full"
+              {...register("email", { required: "Email is required" })}
+            />
             <FieldError error={errors.email} />
           </div>
 
           <div>
             <label className="text-sm font-medium block mb-1">Password</label>
-            <input type="password" placeholder="Enter your password" className="input input-bordered bg-base-200 w-full" {...register("password", { required: "Password is required" })} />
+
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Enter your password"
+                className="input input-bordered bg-base-200 w-full pr-10"
+                {...register("password", { required: "Password is required" })}
+              />
+
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-lg"
+              >
+                {showPassword ? <BiHide /> : <BiShow />}
+              </button>
+            </div>
+
             <FieldError error={errors.password} />
           </div>
 
@@ -64,7 +93,9 @@ const Login = () => {
 
         <p className="text-sm text-center mt-6">
           Don&apos;t Have An Account ?{" "}
-          <Link href="/sign-up" className="text-red-500 font-medium">Register</Link>
+          <Link href="/sign-up" className="text-red-500 font-medium">
+            Register
+          </Link>
         </p>
       </div>
     </div>
