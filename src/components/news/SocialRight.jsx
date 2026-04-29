@@ -41,18 +41,21 @@ const SocialRight = () => {
             height={300}
             alt="Image"
             src={"/swimming.png"}
+            className="mx-auto"
           ></Image>
           <Image
             width={300}
             height={300}
             alt="Image"
             src={"/class.png"}
+            className="mx-auto"
           ></Image>
           <Image
             width={300}
             height={300}
             alt="Image"
             src={"/playground.png"}
+            className="mx-auto"
           ></Image>
         </div>
       </div>

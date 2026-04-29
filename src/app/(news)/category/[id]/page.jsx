@@ -13,7 +13,7 @@ const NewsCategoryPage = async ({ params }) => {
   return (
     <div className="my-8 px-4 relative">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-        <div className="md:col-span-3 sticky top-16 self-start">
+        <div className="md:col-span-3 md:sticky top-16 self-start">
           <CategoryLeft id={id} category={category} />
         </div>
 
@@ -21,7 +21,7 @@ const NewsCategoryPage = async ({ params }) => {
           <MiddleHome news={news} />
         </div>
 
-        <div className="md:col-span-3 sticky top-16 self-start">
+        <div className="md:col-span-3 md:sticky top-16 self-start">
           <SocialRight />
         </div>
       </div>
